@@ -386,11 +386,11 @@ function tier3number(logloglogNum) {
 }
 function tier4illionPrefix(num, vers) {
 // vers = 0: right before illion, 1: tier-2 separator, 2: tier-3 separator
-	var nums = ["","kal","mej","gij","ast","lun","ferm","jov","sol","bet","gloc","gax","sup","vers","mult","pyr"];
-	var nums2 = ["","al","ej","ij","ast","un","erm","ov","ol","eet","oc","ax","up","ers","ult"]; // using eet instead of et because of the sequence bet,det,tret,tet,pet can cause confusion with meg,gig,ter,pet with pet having two possible meanings.
+	var nums = ["","kal","mej","gij","ast","lun","ferm","jov","sol","bet","gloc","gax","sup","vers","mult","pyr","xev","omn","out"];
+	var nums2 = ["","al","ej","ij","ast","un","erm","ov","ol","eet","oc","ax","up","ers","ult","yr","ev","mn","ut"]; // using eet instead of et because of the sequence bet,det,tret,tet,pet can cause confusion with meg,gig,ter,pet with pet having two possible meanings.
 	var numberName = "";
 	num = Math.floor(num);
-	if (num > 14 || num <= 0) {
+	if (num > 19 || num <= 0) {
 		return "";
 	}
 	if (vers == 0) {
@@ -453,7 +453,7 @@ function tier4number(loglogloglogNum) {
 			}
 			tier3illion--;
 		}
-	} else if (tier3illion < 1e45) {
+	} else if (tier3illion < 1e57) {
 		numArray = [Math.floor(10**(Math.log10(tier3illion)%3+6)%1000), Math.floor(10**(Math.log10(tier3illion)%3+3)%1000), Math.floor(10**(Math.log10(tier3illion)%3)%1000)];
 		illionArray = [Math.floor(Math.log10(tier3illion)/3)-2, Math.floor(Math.log10(tier3illion)/3)-1, Math.floor(Math.log10(tier3illion)/3)];
 		if (numArray[2] > 0) {
